@@ -18,28 +18,33 @@ Learn to create a basic GitHub Action that simulates deployments to `dev`, `qa`,
 ```yaml
 name: CI/CD Pipeline
 
-on: [push]
+on: push
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        environment: ['dev', 'qa', 'hml', 'prd']
+
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout code
+      uses: actions/checkout@v2
 
-    - name: Set env
-      run: echo "ENVIRONMENT=${GITHUB_REF#refs/heads/}" >> $GITHUB_ENV
+    - name: Set up environment
+      run: echo "Setting up ${{ matrix.environment }} environment"
 
-    - name: Deploy
-      run: |
-        if [ "${ENVIRONMENT}" == "dev" ]; then
-          echo "Deploying to Development..."
-        elif [ "${ENVIRONMENT}" == "qa" ]; then
-          echo "Deploying to QA..."
-        elif [ "${ENVIRONMENT}" == "hml" ]; then
-          echo "Deploying to HML..."
-        elif [ "${ENVIRONMENT}" == "prd" ]; then
-          echo "Deploying to Production..."
-        else
-          echo "No environment found!"
-        fi
+    - name: Install dependencies
+      run: echo "Installing dependencies for ${{ matrix.environment }}"
+
+    - name: Build App
+      run: echo "Building app for ${{ matrix.environment }} environment"
+
+    - name: Test App
+      if: matrix.environment != 'prd'
+      run: echo "Testing app for ${{ matrix.environment }} environment"
+
+    - name: Deploy App
+      run: echo "Deploying app to ${{ matrix.environment }} environment"
 ```
