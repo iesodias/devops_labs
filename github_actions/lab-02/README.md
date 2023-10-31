@@ -21,30 +21,96 @@ name: CI/CD Pipeline
 on: push
 
 jobs:
-  build:
+  build_dev:
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        environment: ['dev', 'qa', 'hml', 'prd']
-
+    env:
+      ENVIRONMENT: 'dev'
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
 
     - name: Set up environment
-      run: echo "Setting up ${{ matrix.environment }} environment"
+      run: echo "Setting up $ENVIRONMENT environment"
 
     - name: Install dependencies
-      run: echo "Installing dependencies for ${{ matrix.environment }}"
+      run: echo "Installing dependencies for $ENVIRONMENT"
 
     - name: Build App
-      run: echo "Building app for ${{ matrix.environment }} environment"
+      run: echo "Building app for $ENVIRONMENT environment"
 
     - name: Test App
-      if: matrix.environment != 'prd'
-      run: echo "Testing app for ${{ matrix.environment }} environment"
+      run: echo "Testing app for $ENVIRONMENT environment"
 
     - name: Deploy App
-      run: echo "Deploying app to ${{ matrix.environment }} environment"
+      run: echo "Deploying app to $ENVIRONMENT environment"
+
+  build_qa:
+    needs: build_dev
+    runs-on: ubuntu-latest
+    env:
+      ENVIRONMENT: 'qa'
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up environment
+      run: echo "Setting up $ENVIRONMENT environment"
+
+    - name: Install dependencies
+      run: echo "Installing dependencies for $ENVIRONMENT"
+
+    - name: Build App
+      run: echo "Building app for $ENVIRONMENT environment"
+
+    - name: Test App
+      run: echo "Testing app for $ENVIRONMENT environment"
+
+    - name: Deploy App
+      run: echo "Deploying app to $ENVIRONMENT environment"
+
+  build_hml:
+    needs: build_qa
+    runs-on: ubuntu-latest
+    env:
+      ENVIRONMENT: 'hml'
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up environment
+      run: echo "Setting up $ENVIRONMENT environment"
+
+    - name: Install dependencies
+      run: echo "Installing dependencies for $ENVIRONMENT"
+
+    - name: Build App
+      run: echo "Building app for $ENVIRONMENT environment"
+
+    - name: Test App
+      run: echo "Testing app for $ENVIRONMENT environment"
+
+    - name: Deploy App
+      run: echo "Deploying app to $ENVIRONMENT environment"
+
+  build_prd:
+    needs: build_hml
+    runs-on: ubuntu-latest
+    env:
+      ENVIRONMENT: 'prd'
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up environment
+      run: echo "Setting up $ENVIRONMENT environment"
+
+    - name: Install dependencies
+      run: echo "Installing dependencies for $ENVIRONMENT"
+
+    - name: Build App
+      run: echo "Building app for $ENVIRONMENT environment"
+
+    - name: Deploy App
+      run: echo "Deploying app to $ENVIRONMENT environment"
+
 ```
