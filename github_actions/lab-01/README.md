@@ -19,15 +19,15 @@
 3. Open your terminal or command prompt.
 4. Clone the repo:
 
-\```bash
+```bash
 git clone https://github.com/your_username/ga-lab-mdc.git
-\```
+```
 
 5. Navigate to the repository directory:
 
-\```bash
+```bash
 cd ga-lab-mdc
-\```
+```
 
 ---
 
@@ -35,15 +35,15 @@ cd ga-lab-mdc
 
 1. Create the directory structure for the Action:
 
-\```bash
+```bash
 mkdir -p .github/workflows
-\```
+```
 
 2. Use your favorite editor to create and edit the workflow file:
 
-\```bash
+```bash
 nano .github/workflows/ci_cd_pipeline.yml
-\```
+```
 
 3. Paste the GitHub Action manifest into the file and save it.
 
@@ -53,21 +53,21 @@ nano .github/workflows/ci_cd_pipeline.yml
 
 1. Add your changes:
 
-\```bash
+```bash
 git add .
-\```
+```
 
 2. Commit your changes:
 
-\```bash
+```bash
 git commit -m "Adding CI/CD pipeline"
-\```
+```
 
 3. Push the changes:
 
-\```bash
+```bash
 git push origin main
-\```
+```
 
 ---
 
