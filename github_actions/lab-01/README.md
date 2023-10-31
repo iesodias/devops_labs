@@ -6,7 +6,7 @@
 2. Log in to your account.
 3. In the top-right corner, click on the `+` icon and select `New repository`.
 4. Name your repository `ga-lab-mdc`.
-5. Set the repository to `Public` or `Private` as desired.
+5. Set the repository to `Public`.
 6. (Optional) Initialize this repository with a README.
 7. Click `Create repository`.
 
