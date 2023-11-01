@@ -14,4 +14,9 @@ Remember, the labs provided here are basic examples. In real-world scenarios, yo
 
 ---
 
+### 🌐 **Join the DevOps Mentorship!**
+Interested in taking your DevOps journey to the next level? Apply for the specialized mentorship now! [Apply for DevOps Mentorship](https://guilhermemaia.com/mentoria-devops).
+
+---
+
 Wishing you an incredible learning journey! 🌟
