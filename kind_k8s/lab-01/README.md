@@ -1,92 +1,52 @@
-# Lab: Setting up Ingress in Kubernetes with Kind
+# Installing Kind (Kubernetes in Docker) - Quick Start
 
 ## Prerequisites:
-- You must have Docker and Kind (Kubernetes in Docker) installed on your system.
+- Ensure you have Docker installed and running on your system. You can verify this by running `docker --version` in your terminal.
 
-## Step 1: Create a Directory for the Lab
+## Step 1: Verify Prerequisites
 
-Create a dedicated directory for the lab and navigate to it:
+Before you begin, make sure you have the following prerequisites installed on your system:
 
-```bash
-mkdir mdc-kind-lab
-cd mdc-kind-lab
-```
+- Docker: Ensure that Docker is installed and running. You can check by running `docker --version` in your terminal.
 
-## Step 2: Configure Hosts
+## Step 2: Install Kind
 
-In your operating system (Windows or Linux), add an entry to the `/etc/hosts` file with the IP address that looks like:
+### On Linux and macOS:
 
-- Windows:
-```bash
-  C:\Windows\System32\drivers\etc\hosts
-```
-
-- Linux:
-```bash
-  /etc/hosts
-```
-
-Add the following entry:
+To install Kind, you can use the `curl` utility. Run the following command in your terminal:
 
 ```bash
-127.0.0.1 kubernetes.docker.internal
+curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.11.1/kind-linux-amd64
 ```
 
-## Step 3: Create a Kind Cluster
-
-Create a Kind cluster using a configuration file (assuming you have a file named `kind.yaml` with the cluster configuration):
+After downloading the Kind binary, make it executable:
 
 ```bash
-kind: Cluster
-apiVersion: kind.x-k8s.io/v1alpha4
-nodes:
-  - role: control-plane
-    kubeadmConfigPatches:
-      - |
-        kind: InitConfiguration
-        nodeRegistration:
-          kubeletExtraArgs:
-            node-labels: "ingress-ready=true"
-                
-    extraPortMappings:
-      - containerPort: 80
-        hostPort: 80
-        protocol: TCP
-      - containerPort: 443
-        hostPort: 443
-        protocol: TCP
+chmod +x ./kind
 ```
 
-Execute the following command to create the Kind cluster:
+Move the binary to a directory in your PATH so that you can run it from anywhere:
 
 ```bash
-kind create cluster --config=kind.yaml
+sudo mv ./kind /usr/local/bin/
 ```
 
-## Step 4: Create an Ingress Namespace
+### On Windows:
 
-Create a namespace named `ingress-nginx`:
+To install Kind on Windows, you can use the `chocolatey` utility. Open PowerShell as an administrator and run the following command:
 
 ```bash
-kubectl create ns ingress-nginx
+choco install kind
 ```
 
-## Step 5: Helm Upgrade
+## Step 3: Verify Installation
 
-Use Helm to upgrade ingress-nginx with the necessary configurations:
+To verify that Kind has been installed correctly, type the following command:
 
 ```bash
-helm upgrade -i ingress-nginx ingress-nginx/ingress-nginx \
---namespace ingress-nginx \
---set controller.metrics.enabled=true \
---set controller.podAnnotations."prometheus\.io/scrape"=true \
---set controller.podAnnotations."prometheus\.io/port"=10254
+kind version
 ```
 
-## Step 6: Deploy the nginx-ingress Controller
+You should see the Kind version displayed in your terminal.
 
-Deploy the nginx-ingress controller to your Kind cluster using the following command:
-
-```bash
-kubectl apply --filename https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/static/provider/kind/deploy.yaml
-```
+Now you have successfully installed Kind on your system and are ready to create local Kubernetes clusters using Kind. Be sure to refer to the official Kind documentation for additional information on using Kind to create and manage Kubernetes clusters in Docker: [Kind Quick Start](https://kind.sigs.k8s.io/docs/user/quick-start/#installation).
