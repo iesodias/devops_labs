@@ -50,3 +50,7 @@ kind version
 You should see the Kind version displayed in your terminal.
 
 Now you have successfully installed Kind on your system and are ready to create local Kubernetes clusters using Kind. Be sure to refer to the official Kind documentation for additional information on using Kind to create and manage Kubernetes clusters in Docker: [Kind Quick Start](https://kind.sigs.k8s.io/docs/user/quick-start/#installation).
+
+> 🚨 **Off-topic**: Hey there! If you're passionate about DevOps like I am and want to take your skills to the next level, I run a specialized DevOps mentorship. 🧠🛠 Dive deeper into the world of continuous integration, deployment, and best practices with me! 🚀 Oh, and for some cool tech content and behind-the-scenes, make sure to follow me on Instagram 📸 [@iesofdias](https://www.instagram.com/iesofdias/).
+> ### 🌐 **Join the DevOps Mentorship!**
+Interested in taking your DevOps journey to the next level? Apply for the specialized mentorship now! [Apply for DevOps Mentorship](https://guilhermemaia.com/mentoria-devops).
