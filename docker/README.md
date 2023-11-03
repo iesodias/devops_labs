@@ -14,8 +14,6 @@ Overall, Docker makes it easier to develop, test, and deploy applications and se
 - What problems we have with Traditional Infra?
 - Why do we need to use Docker? 
 - What are advantages of using Docker?
--  For introduction slides refer the [presentation slides](/otherfiles/presentation/Docker-Fundamentals-v1.pdf). 
-
 
 # Docker Architecture
 
@@ -40,5 +38,4 @@ In the diagram, the user interacts with the Docker client, which communicates wi
 - What is Docker Client?
 - What are Docker Images?
 - What are Docker Containers?
-- What is Docker Registry or Docker Hub?
--  Refer the [presentation slides](/otherfiles/presentation/Docker-Fundamentals-v1.pdf). 
+- What is Docker Registry or Docker Hub? 
