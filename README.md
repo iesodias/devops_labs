@@ -20,3 +20,28 @@ Interested in taking your DevOps journey to the next level? Apply for the specia
 ---
 
 Wishing you an incredible learning journey! 🌟
+
+---
+
+# 🚀 Universidade DevOps MDC
+
+Bem-vindo ao repositório da Universidade DevOps MDC!
+
+Se você está pensando em mergulhar no emocionante mundo DevOps, você está no lugar certo! Este repositório foi projetado para oferecer uma variedade de laboratórios práticos para familiarizá-lo com as principais ferramentas, práticas e conceitos em DevOps. Cada laboratório foi cuidadosamente elaborado para proporcionar uma experiência de aprendizado prática, permitindo que você coloque a teoria em prática.
+
+Se você é um iniciante tentando entender os fundamentos ou alguém com algum conhecimento prévio que deseja aprimorar suas habilidades, há algo aqui para todos.
+
+---
+
+Lembre-se de que os laboratórios fornecidos aqui são exemplos básicos. Em cenários do mundo real, você usaria comandos e scripts específicos adaptados a cada situação ou ferramenta.
+
+> 🚨 **Fora do tópico**: Ei! Se você é tão apaixonado por DevOps quanto eu e deseja aprimorar suas habilidades, estou oferecendo uma mentoria especializada em DevOps. 🧠🛠 Aprofunde-se no mundo da integração contínua, implantação e melhores práticas comigo! 🚀 Além disso, para conteúdo técnico interessante e espiadas nos bastidores, siga-me no Instagram 📸 [@iesofdias](https://www.instagram.com/iesofdias/).
+
+---
+
+### 🌐 **Junte-se à Mentoria DevOps!**
+Interessado em levar sua jornada DevOps para o próximo nível? Inscreva-se agora na mentoria especializada! [Inscreva-se na Mentoria DevOps](https://guilhermemaia.com/mentoria-devops).
+
+---
+
+Desejamos a você uma jornada de aprendizado incrível! 🌟
