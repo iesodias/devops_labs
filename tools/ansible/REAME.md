@@ -45,7 +45,7 @@ deactivate
 ## Step 6: (Optional) Ansible Configuration
 Customize your Ansible setup by editing the configuration file.
 ```bash
-nano ~/my-ansible-env/ansible.cfg
+vi ~/my-ansible-env/ansible.cfg
 ```
 
 This concludes the lab for installing Ansible on Ubuntu using pip.
