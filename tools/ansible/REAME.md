@@ -2,7 +2,7 @@
 
 ## Prerequisites:
 - Ubuntu system with Python installed.
-- \`sudo\` privileges or access to the \`root\` user.
+- `sudo` privileges or access to the `root` user.
 
 ## Step 1: Update the Package List
 Update your package list to ensure you can download the latest packages.
@@ -12,13 +12,13 @@ sudo apt upgrade -y
 ```
 
 ## Step 2: Install pip for Python
-Install \`pip\` if it is not already installed on your system.
+Install `pip` if it is not already installed on your system.
 ```bash
 sudo apt install python3-pip -y
 ```
 
 ## Step 3: Install Ansible with pip
-Use \`pip\` to install Ansible.
+Use `pip` to install Ansible.
 ```bash
 sudo pip3 install ansible
 ```
