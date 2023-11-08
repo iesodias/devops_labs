@@ -47,25 +47,25 @@ plugins=(... zsh-syntax-highlighting)
 ```
 Save and close the file, then restart the terminal or type `source ~/.zshrc` to apply the changes.
 
-## Step 5: Set the Spaceship Prompt as Default Theme for Oh My Zsh!
+## Set the Spaceship Prompt as Default Theme for Oh My Zsh!
 Spaceship Prompt is a Zsh theme focused on the information you need while you work, with a sleek and modern design.
 
-## Step 7: Install Git (if not already installed):
+## Step 6: Install Git (if not already installed):
 ```bash
 sudo apt-get install git
 ```
 
-## Step 8: Clone the Spaceship Prompt repository:
+## Step 7: Clone the Spaceship Prompt repository:
 ```bash
 git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt"
 ```
 
-## Step 9: Create a symlink for the Spaceship theme:
+## Step 8: Create a symlink for the Spaceship theme:
 ```bash
 ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
 ```
 
-## Step 10: Edit your `.zshrc` file to set the theme:
+## Step 9: Edit your `.zshrc` file to set the theme:
 If you have Visual Studio Code installed, you can open the `.zshrc` file using the command below:
 ```bash
 code ~/.zshrc
@@ -75,7 +75,7 @@ Or, you can use `vi` or any other text editor of your choice:
 vi ~/.zshrc
 ```
 
-## Step 11: Configure Spaceship theme settings:
+## Step 10: Configure Spaceship theme settings:
 Add the following lines to the end of your `.zshrc` file:
 ```zsh
 ZSH_THEME="spaceship"
