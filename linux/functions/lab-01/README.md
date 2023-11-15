@@ -23,14 +23,14 @@ touch my_functions.sh
 Open `my_functions.sh` and add a basic function:
 
 ```bash
-nano my_functions.sh
+vi my_functions.sh
 ```
 
 Write the following function:
 
 ```bash
-hello_world() {
-    echo "Hello, world!"
+hello_mdc() {
+    echo "Hello, MDC University!"
 }
 ```
 
@@ -47,7 +47,7 @@ source my_functions.sh
 Execute the `hello_world` function:
 
 ```bash
-hello_world
+hello_mdc
 ```
 
 ## Step 5: Create a Function with Parameters
@@ -55,7 +55,7 @@ hello_world
 Edit `my_functions.sh` to add a function that accepts parameters:
 
 ```bash
-nano my_functions.sh
+vi my_functions.sh
 ```
 
 Add the following function:
