@@ -101,6 +101,6 @@ greet_person
 
 ---
 
-> 🚨 **Extra Resource**: Want to dive deeper into Bash scripting and Linux command-line prowess? Check out my specialized mentorship program where we explore advanced topics in scripting and system automation! 🚀 Follow me on Instagram 📸 [@iesofdias](https://www.instagram.com/iesofdias/) for tech tips and updates. 
-> ### 🌐 **Join the Bash Scripting Journey!**
-> Ready to master Bash scripting? Apply for my mentorship program now! [Apply for Bash Scripting Mentorship](https://guilhermemaia.com/mentoria-devops).
+> 🚨 **Off-topic**: Hey there! If you're passionate about DevOps like I am and want to take your skills to the next level, I run a specialized DevOps mentorship. 🧠🛠 Dive deeper into the world of continuous integration, deployment, and best practices with me! 🚀 Oh, and for some cool tech content and behind-the-scenes, make sure to follow me on Instagram 📸 [@iesofdias](https://www.instagram.com/iesofdias/).
+> ### 🌐 **Join the DevOps Mentorship!**
+> Interested in taking your DevOps journey to the next level? Apply for the specialized mentorship now! [Apply for DevOps Mentorship](https://guilhermemaia.com/mentoria-devops).

@@ -60,6 +60,6 @@ create_resource_group mdc-rg eastus
 
 ---
 
-> 🚨 **Extra Resource**: Explore more about Azure and its services with my specialized mentorship program. Follow me on Instagram 📸 [@iesofdias](https://www.instagram.com/iesofdias/) for more Azure tips and updates.
-> ### 🌐 **Join the Azure Mastery Journey!**
-> Want to excel in Azure Cloud? Apply for my mentorship program now! [Apply for Azure Cloud Mentorship](https://guilhermemaia.com/mentoria-azure).
+> 🚨 **Off-topic**: Hey there! If you're passionate about DevOps like I am and want to take your skills to the next level, I run a specialized DevOps mentorship. 🧠🛠 Dive deeper into the world of continuous integration, deployment, and best practices with me! 🚀 Oh, and for some cool tech content and behind-the-scenes, make sure to follow me on Instagram 📸 [@iesofdias](https://www.instagram.com/iesofdias/).
+> ### 🌐 **Join the DevOps Mentorship!**
+> Interested in taking your DevOps journey to the next level? Apply for the specialized mentorship now! [Apply for DevOps Mentorship](https://guilhermemaia.com/mentoria-devops).
