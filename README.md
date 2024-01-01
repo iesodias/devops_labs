@@ -1,11 +1,10 @@
 # 🚀 MDC DevOps University
 
-<center>
-![Logo do projeto](/img/logo.png)
-</center>
+<p align="center">
+  <img src="/img/logo.png">
+</p>
 
 <div style="text-align:center"><img src="/img/logo.png" /></div>.
-
 
 Welcome to the MDC DevOps University repository!
 
