@@ -1,8 +1,8 @@
 # 🚀 MDC DevOps University
 
-<div align="center">
+<p align="center">
 ![Logo do projeto](/img/logo.png)
-</div>
+</p>
 
 Welcome to the MDC DevOps University repository!
 
