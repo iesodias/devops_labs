@@ -1,4 +1,7 @@
-# 🚀 MDC DevOps University
+# MDC DevOps University
+
+<h1 align="center">MDC DevOps University</h1>
+
 
 <p align="center">
   <img src="/img/logo.png">
