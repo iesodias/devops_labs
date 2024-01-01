@@ -1,5 +1,3 @@
-# MDC DevOps University
-
 <h1 align="center">MDC DevOps University</h1>
 
 
