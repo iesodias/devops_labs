@@ -4,6 +4,9 @@
 ![Logo do projeto](/img/logo.png)
 </center>
 
+<div style="text-align:center"><img src="/img/logo.png" /></div>.
+
+
 Welcome to the MDC DevOps University repository!
 
 If you're considering diving into the thrilling world of DevOps, you're in the right place! This repository is designed to offer a range of hands-on labs to familiarize you with the key tools, practices, and concepts in DevOps. Each lab has been carefully crafted to provide a hands-on learning experience, allowing you to put theory into practice.
