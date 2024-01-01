@@ -1,0 +1,128 @@
+# macOS
+.DS_Store
+
+# Xcode
+*.swp
+*~.nib/
+*.swp
+*~.nib/
+xcuserdata/
+
+# Sublime Text
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
+*.sublime-workspace
+*.sublime-project
+*.sublime-package
+*.sublime-build
+*.sublime-settings
+*.sublime-commands
+
+# IntelliJ
+.idea/
+
+# Visual Studio Code
+.vscode/
+
+# macOS metadata
+.AppleDouble
+.DS_Store
+.LSOverride
+
+# Thumbnails
+._*
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+
+# Compiled Python files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Compiled Java files
+*.class
+
+# Compiled Ruby files
+*.rbc
+*.rbo
+*.rbs
+
+# Compiled TypeScript files
+*.js
+*.jsx
+*.ts
+*.tsx
+
+# Compiled Objective-C files
+*.o
+*.lo
+*.la
+*.lai
+*.class
+
+# Compiled Java Bytecode
+*.class
+
+# Node.js
+node_modules/
+npm-debug.log*
+
+# Yarn
+yarn-error.log
+
+# Bower
+bower_components/
+
+# Dependency directories
+jspm_packages/
+typings/
+
+# Gradle
+build/
+.gradle/
+
+# Elastic Beanstalk
+.elasticbeanstalk/
+
+# Django
+*.log
+
+# Jekyll
+_site/
+
+# Sphinx documentation
+docs/_build/
+
+# pyenv
+.python-version
+
+# pipenv
+Pipfile.lock
+Pipfile~*
+
+# virtualenv
+venv/
+ENV/
+
+# Subversion
+.svn/
+
+# Heroku
+*.heroku/
+
+# Docker
+.docker/
+
+# Composer
+/vendor/
+
+# Vagrant
+.vagrant/
+
+# macOS Finder files
+Icon?
+ehthumbs.db
+Thumbs.db
