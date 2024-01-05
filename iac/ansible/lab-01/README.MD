@@ -8,24 +8,25 @@ In this lab, you will set up Ansible on your local machine, create two Ubuntu vi
 Azure CLI installed on your local machine
 SSH key pair generated on your local machine
 
-Step 1: Log in to Azure
+## Step 1: Log in to Azure
 ```bash
 az login
 ```
-Step 2: Generate SSH Key Pair
+## Step 2: Generate SSH Key Pair
 ```bash
 az sshkey create --name "mdc-key" --resource-group "mdc-rg"
 ```
 Give permissions to the key
 ```bash
 cd ~/.ssh/
+ls -la
 chmod 600 1704483110_1072772 #KEY NAME GENERATED
 ```
-Step 3: Create a Resource Group in East US
+## Step 3: Create a Resource Group in East US
 ```bash
 az group create --name mdc-rg --location eastus
 ```
-Step 4: Create Virtual Machines
+## Step 4: Create Virtual Machines
 
 ```bash
 # Virtual Machine 1
@@ -44,24 +45,35 @@ az vm create \
   --admin-username azureuser \
   --ssh-key-values "$(cat ~/.ssh/1704484302_2513762.pub)"
 ```
-Step 5: Copy the Locally Generated Key to the Controller (mdc-01)
+## Step 5: Copy the Locally Generated Key to the Controller (mdc-01)
 
 ```bash
-scp -i ~/.ssh/1704484302_2513762 ~/.ssh/1704484302_2513762 azureuser@20.124.99.46:~/.ssh/ #COPY THE KEY TO MDC-01
-ssh -i ~/.ssh/1704484302_2513762 azureuser@172.191.45.243
+scp -i ~/.ssh/1704484302_2513762 ~/.ssh/1704484302_2513762 azureuser@172.203.142.126:~/.ssh/ #COPY THE KEY TO MDC-01
+ssh -i ~/.ssh/1704484302_2513762 azureuser@172.203.142.126
 ```
-Step 6: Create SSH Key File for Ansible
+## Step 6: Create SSH Key File for Ansible
 
 ```bash
-echo -e "mdc-target1 ansible_host=172.191.45.243 ansible_user=azureuser ansible_ssh_private_key_file=/home/azureuser/.ssh/1704484302_2513762" > inventory.txt
+echo -e "mdc-target1 ansible_host=172.174.61.99 ansible_user=azureuser ansible_ssh_private_key_file=/home/azureuser/.ssh/1704484302_2513762" > inventory.txt
 ```
-Step 7: Test Connectivity
+
+## Step 7: Install Ansible on Your MDC-01
+
+```bash
+sudo apt update
+sudo apt install ansible
+```
+## Step 8: Test Connectivity
 
 ```bash
 ansible mdc-target1 -i inventory.txt -m ping
 ```
-Step 8: Create Ansible Playbook
+## Step 8: Create Ansible Playbook
 Create a file named playbook.yaml with the following content:
+
+```bash
+vi playbook.yaml
+```
 
 ```yaml
 ---
@@ -71,17 +83,12 @@ Create a file named playbook.yaml with the following content:
     - name: Ping the web servers
       ping:
 ```
-Step 9: Execute Ansible Playbook
+## Step 9: Execute Ansible Playbook
 
 ```bash
 ansible-playbook playbook.yaml -i inventory.txt
 ```
 
-# Delete VMs
-```bash
-az vm delete --resource-group mdc-rg --name mdc-01-controller --yes
-az vm delete --resource-group mdc-rg --name mdc-02-worker --yes
-```
 # Delete the resource group
 ```bash
 az group delete --name mdc-rg --yes
