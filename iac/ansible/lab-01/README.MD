@@ -12,7 +12,11 @@ SSH key pair generated on your local machine
 ```bash
 az login
 ```
-## Step 2: Generate SSH Key Pair
+## Step 2: Create a Resource Group in East US
+```bash
+az group create --name mdc-rg --location eastus
+```
+## Step 3: Generate SSH Key Pair
 ```bash
 az sshkey create --name "mdc-key" --resource-group "mdc-rg"
 ```
@@ -21,10 +25,6 @@ Give permissions to the key
 cd ~/.ssh/
 ls -la
 chmod 600 1704483110_1072772 #KEY NAME GENERATED
-```
-## Step 3: Create a Resource Group in East US
-```bash
-az group create --name mdc-rg --location eastus
 ```
 ## Step 4: Create Virtual Machines
 
