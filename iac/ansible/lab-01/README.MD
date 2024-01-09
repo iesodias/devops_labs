@@ -24,9 +24,9 @@ Give permissions to the key
 ```bash
 cd ~/.ssh/
 ls -la
-chmod 600 1704483110_1072772 #KEY NAME GENERATED
+chmod 600 1704483110_1072772 #KEY_NAME_GENERATED
 ```
-## Step 4: Create Virtual Machines
+## Step 4: Create Virtual Machines - Make sure to change the key name to the correct one in the ~/.ssh directory.
 
 ```bash
 # Virtual Machine 1
@@ -45,7 +45,7 @@ az vm create \
   --admin-username azureuser \
   --ssh-key-values "$(cat ~/.ssh/1704484302_2513762.pub)"
 ```
-## Step 5: Copy the Locally Generated Key to the Controller (mdc-01)
+## Step 5: Copy the Locally Generated Key to the Controller (mdc-01) - Make sure to change the key name to the correct one in the ~/.ssh directory.
 
 ```bash
 scp -i ~/.ssh/1704484302_2513762 ~/.ssh/1704484302_2513762 azureuser@172.203.142.126:~/.ssh/ #COPY THE KEY TO MDC-01
