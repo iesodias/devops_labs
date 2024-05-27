@@ -1,16 +1,16 @@
 # 4 - Use the Terraform CLI (Outside of Core Workflow)
 The Terraform Command Line Interface (CLI) offers a range of commands beyond the core workflow of init, plan, apply, and destroy. These additional commands help with formatting, validating, managing state, importing resources, and more. Here’s a detailed look at the essential Terraform CLI commands outside of the core workflow:
 
-### Formatting Configuration Files
-## terraform fmt:
+## Formatting Configuration Files
+### terraform fmt:
 - Purpose: Automatically formats Terraform configuration files to follow a canonical format and style.
 - Usage: This helps ensure consistent code formatting, making it easier to read and maintain.
 - Example:
 ```bash
 terraform fmt
 ```
-### Validating Configuration Files
-## terraform validate:
+## Validating Configuration Files
+### terraform validate:
 - Purpose: Validates the configuration files for syntax errors and internal consistency without connecting to any infrastructure provider.
 - Usage: Helps catch syntax errors and basic configuration issues before running more involved commands like plan or apply.
 - Example:
