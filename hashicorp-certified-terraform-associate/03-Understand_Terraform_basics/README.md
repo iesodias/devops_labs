@@ -1,4 +1,4 @@
-# Understand Terraform Basics
+# 3 - Understand Terraform Basics
 
 Understanding the basics of Terraform involves grasping key concepts, the structure of Terraform configuration files, and the essential commands to manage infrastructure.
 
