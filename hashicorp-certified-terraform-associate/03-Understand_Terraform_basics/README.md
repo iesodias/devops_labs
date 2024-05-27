@@ -93,37 +93,37 @@ terraform init
 ```
 ### terraform plan:
 Creates an execution plan, showing what actions Terraform will take to achieve the desired state defined in the configuration files.
-```t
+```bash
 terraform plan
 ```
 ### terraform apply:
 Applies the changes required to reach the desired state of the configuration. It prompts for confirmation before making any changes.
-```t
+```bash
 terraform apply
 ```
 ### terraform destroy:
 Destroys the infrastructure managed by the configuration. This command will prompt for confirmation before deleting resources.
-```t
+```bash
 terraform destroy
 ```
 ### terraform fmt:
 Formats Terraform configuration files to a canonical format and style.
-```t
+```bash
 terraform fmt
 ```
 ### terraform validate:
 Validates the configuration files for syntax and internal consistency.
-```t
+```bash
 terraform validate
 ```
 ### terraform import:
 Imports existing infrastructure into Terraform's state, allowing Terraform to manage resources that were not originally created by Terraform.
-```
+```bash
 terraform import aws_instance.example i-1234567890abcdef0
 ```
 ### terraform state:
 Provides commands to inspect and modify the state file.
-```t
+```bash
 terraform state list
 ```
 
