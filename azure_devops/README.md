@@ -79,7 +79,7 @@ Now you have successfully created the azure-pipelines.yaml file in the mdc-pipel
 1. Create a Resource Group in Azure
 Open the Azure CLI and run the following command to create a resource group:
 ```bash
-az group create --name mdc-rg --location <region>
+az group create --name mdc-rg --location centralus
 ```
 Replace <region> with the desired region (e.g., centralus).
 2. Create an App Service Plan
@@ -130,6 +130,7 @@ pool:
 # Define as etapas da pipeline
 steps:
 - task: Docker@2
+  displayName: 'Build and Push Container to Dockerhub'
   inputs:
     containerRegistry: 'registry'
     repository: 'iesodias/mdc-react-app'
@@ -156,6 +157,7 @@ steps:
 
 ```yaml
 - task: AzureRmWebAppDeployment@4
+  displayName: 'Deploy App Service Container'
   inputs:
     ConnectionType: 'AzureRM'
     azureSubscription: 'AzureRM'
