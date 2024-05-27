@@ -1,7 +1,7 @@
-9. Understand Terraform Cloud and Enterprise Capabilities
+# 9 - Understand Terraform Cloud and Enterprise Capabilities
 Terraform Cloud and Terraform Enterprise are advanced offerings from HashiCorp that provide additional features and capabilities for managing infrastructure as code (IaC) at scale. Let's explore their capabilities:
 
-# Terraform Cloud
+## Terraform Cloud
 Terraform Cloud is a hosted service provided by HashiCorp that offers collaboration, automation, and governance features for Terraform workflows. Its key capabilities include:
 
 ### Collaboration
