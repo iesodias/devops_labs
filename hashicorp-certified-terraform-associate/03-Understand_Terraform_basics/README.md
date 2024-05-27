@@ -118,7 +118,7 @@ terraform validate
 ```
 ### terraform import:
 Imports existing infrastructure into Terraform's state, allowing Terraform to manage resources that were not originally created by Terraform.
-```t
+```
 terraform import aws_instance.example i-1234567890abcdef0
 ```
 ### terraform state:
