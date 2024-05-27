@@ -1,120 +1,141 @@
-# 6 - Navigate Terraform Workflow
-Understanding and navigating the Terraform workflow is essential for effectively managing infrastructure as code (IaC). The typical Terraform workflow involves several stages: writing configuration, initializing the project, planning, applying changes, and destroying infrastructure. Here’s a detailed breakdown of each stage:
+# 5 - Interact with Terraform Modules
+Terraform modules are reusable units of configuration that encapsulate a group of resources used together. Modules help organize, reuse, and maintain infrastructure code, making it more manageable and scalable. Here's a detailed guide on how to interact with Terraform modules:
 
-## Write
-### Writing Configuration
-Configuration Files: Terraform configurations are written in HashiCorp Configuration Language (HCL) and stored in files with a .tf extension.
-Structure: Define providers, resources, data sources, variables, and outputs.
-
-```t
-provider "aws" {
-  region = "us-west-2"
-}
-
+## Understanding Modules
+### What is a Module?
+- Definition: A module is a container for multiple resources that are used together. Every Terraform configuration has at least one module (the root module).
+- Structure: Modules typically include a main.tf, variables.tf, outputs.tf, and optionally other .tf files.
+- Why Use Modules?
+- Reusability: Write the configuration once and reuse it across different parts of your infrastructure.
+- Organization: Break down complex configurations into smaller, manageable pieces.
+- Consistency: Ensure consistent resource definitions and configurations.
+## Using a Module
+### Module Structure
+A typical module might include:
+```bash
+main.tf: The main configuration file defining resources.
+variables.tf: Input variables for the module.
+outputs.tf: Outputs from the module.
+README.md: Documentation for the module.
+```
+## Example Module Configuration
+### main.tf
+```bash
 resource "aws_instance" "example" {
-  ami           = "ami-0c55b159cbfafe1f0"
-  instance_type = "t2.micro"
+  ami           = var.ami
+  instance_type = var.instance_type
 
   tags = {
-    Name = "example-instance"
+    Name = var.name
   }
 }
+```
+### variables.tf
+```bash
+variable "ami" {
+  description = "The AMI to use for the instance"
+  type        = string
+}
 
+variable "instance_type" {
+  description = "The type of instance to use"
+  type        = string
+  default     = "t2.micro"
+}
+
+variable "name" {
+  description = "The name to tag the instance"
+  type        = string
+}
+```
+### outputs.tf
+```bash
 output "instance_id" {
   value = aws_instance.example.id
 }
 ```
+Using a Module in a Configuration
+To use a module, reference it in your root module's configuration:
 
-### Best Practices
-- Modularization: Break configurations into reusable modules.
-- Version Control: Store configuration files in a version control system (e.g., Git) to track changes and collaborate with others.
+```bash
+module "example_instance" {
+  source       = "./path_to_module"
+  ami          = "ami-0c55b159cbfafe1f0"
+  instance_type = "t2.micro"
+  name         = "example-instance"
+}
 
-## Initialize
-### Initializing the Project
-- terraform init: Initializes the working directory containing the configuration files.
-- Purpose: Downloads necessary provider plugins and sets up the backend configuration.
-- Example:
+output "instance_id" {
+  value = module.example_instance.instance_id
+}
+```
+## Source Types
+### Modules can be sourced from different locations:
+- Local Path: ./path_to_module
+- GitHub: github.com/username/repo//path_to_module
+- Terraform Registry: terraform-aws-modules/ec2-instance/aws
+
+## Best Practices
+### Use Versioning
+- Pin Module Versions: When using modules from external sources, specify the version to ensure stability.
+```bash
+source  = "terraform-aws-modules/vpc/aws"
+version = "2.44.0"
+```
+### Organize Code
+- Modular Structure: Break down configurations into logical modules (e.g., network, compute, storage).
+### Documentation
+- README: Include a README.md in each module with usage instructions and examples.
+- Variable Validation
+- Validate Inputs: Use validation rules for variables to enforce constraints.
+```bash
+variable "instance_type" {
+  type    = string
+  default = "t2.micro"
+  validation {
+    condition     = contains(["t2.micro", "t3.micro"], var.instance_type)
+    error_message = "Invalid instance type"
+  }
+}
+```
+### Outputs
+- Useful Outputs: Define outputs for important values that users of the module will need.
+- Example Module from Terraform Registry
+- Using a module from the Terraform Registry:
+```bash
+module "vpc" {
+  source  = "terraform-aws-modules/vpc/aws"
+  version = "2.44.0"
+
+  name = "my-vpc"
+  cidr = "10.0.0.0/16"
+
+  azs             = ["us-west-1a", "us-west-1b"]
+  private_subnets = ["10.0.1.0/24", "10.0.2.0/24"]
+  public_subnets  = ["10.0.3.0/24", "10.0.4.0/24"]
+
+  tags = {
+    Terraform = "true"
+    Environment = "dev"
+  }
+}
+```
+## Managing Modules
+### Initialize and Update Modules
+- terraform init: Initializes the working directory, downloading necessary modules.
 ```bash
 terraform init
 ```
-## Backend Configuration
-### Local vs. Remote: By default, Terraform uses a local backend to store state files. For collaboration, use a remote backend (e.g., AWS S3, Terraform Cloud).
-```t
-backend "s3" {
-  bucket = "my-terraform-state"
-  key    = "path/to/my/key"
-  region = "us-west-2"
-}
+- terraform get: Manually downloads and updates modules.
+```bash
+terraform get
 ```
-## Plan
-### Creating an Execution Plan
-- terraform plan: Generates an execution plan, showing what actions Terraform will take to achieve the desired state defined in the configuration.
-- Purpose: Allows you to review changes before applying them.
-- Example:
-```t
+### Debugging Modules
+- terraform plan: Review the plan to ensure the module behaves as expected.
+```bash
 terraform plan
 ```
-- Key Outputs
-- Change Summary: Details what resources will be created, updated, or destroyed.
-- Review: Carefully review the plan to ensure it matches your expectations.
-
-## Apply
-### Applying Changes
-- terraform apply: Applies the changes required to reach the desired state of the configuration.
-- Purpose: Executes the actions proposed in the plan to provision or update infrastructure.
-- Example:
+- terraform apply: Apply changes and observe the output to verify module functionality.
 ```bash
 terraform apply
-```
-- Automated Approvals
-- Auto-Approve: Use the -auto-approve flag to skip the approval prompt for automated workflows.
-- Example:
-```bash
-terraform apply -auto-approve
-```
-## Destroy
-### Destroying Infrastructure
-- terraform destroy: Destroys the infrastructure managed by the configuration.
-- Purpose: Clean up resources when they are no longer needed.
-- Example:
-```bash
-terraform destroy
-```
-- Automated Destruction
-- Auto-Approve: Use the -auto-approve flag to skip the approval prompt for automated cleanup.
-- Example:
-```bash
-terraform destroy -auto-approve
-```
-## Additional Workflow Steps
-### Managing State
-- State Locking: Prevents concurrent operations from corrupting the state file. This is crucial when multiple team members work on the same infrastructure.
-- Remote State: Storing state in a remote backend enables collaboration and disaster recovery.
-- Managing Resources
-- terraform refresh: Updates the state file with the real-world infrastructure state.
-```bash
-terraform refresh
-```
-- terraform taint: Marks a resource for recreation.
-```bash
-terraform taint aws_instance.example
-```
-- terraform untaint: Removes the "tainted" state from a resource.
-```bash
-terraform untaint aws_instance.example
-```
-## Using Workspaces
-### Workspaces: Isolate different environments (e.g., dev, staging, production) within a single configuration.
-- Commands:
-- Create Workspace:
-```bash
-terraform workspace new dev
-```
-- Switch Workspace:
-```bash
-terraform workspace select dev
-```
-- List Workspaces:
-```bash
-terraform workspace list
 ```
