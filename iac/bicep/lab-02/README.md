@@ -1,4 +1,3 @@
-```markdown
 # 🐳 Lab: Subindo um Container App com Docker e Bicep no Azure
 
 Este lab vai te guiar por um passo a passo completo para subir uma aplicação containerizada no Azure Container Apps usando Bicep.
@@ -108,4 +107,3 @@ az group delete --name mdc-rg --yes --no-wait
 ---
 
 ✨ Pronto! Agora você tem um container rodando no Azure com Docker + Bicep. Sinta-se livre para evoluir isso com variáveis de ambiente, secrets, autoscaling ou GitHub Actions.
-```
