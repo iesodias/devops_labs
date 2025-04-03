@@ -1,10 +1,10 @@
-# 🚀 Lab: Creating a Virtual Machine in Azure with Bicep
+# Lab: Creating a Virtual Machine in Azure with Bicep
 
 This lab will guide you through creating a Linux virtual machine using Bicep
 
 ---
 
-## 🧱 Prerequisites
+## Prerequisites
 
 - Azure account ([Azure Portal](https://portal.azure.com))
 - [Azure CLI](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli) installed
@@ -13,7 +13,7 @@ This lab will guide you through creating a Linux virtual machine using Bicep
 
 ---
 
-## 🗂️ Project structure
+## Project structure
 
 ```
 vm-bicep-lab/
@@ -23,7 +23,7 @@ vm-bicep-lab/
 
 ---
 
-## 📝 Bicep Code (`main.bicep`)
+## Bicep Code (`main.bicep`)
 
 ```bicep
 @description('Virtual Machine Name')
@@ -170,7 +170,7 @@ output sshCommand string = 'ssh ${adminUsername}@${publicIP.properties.ipAddress
 
 ---
 
-## ⚙️ Deploy with Azure CLI
+## Deploy with Azure CLI
 
 ```bash
 # Create the resource group
@@ -184,7 +184,7 @@ az deployment group create \
 
 ---
 
-## 📡 Access the Virtual Machine
+## Access the Virtual Machine
 
 ```bash
 # Copy the public IP from the output and run the SSH command
@@ -193,7 +193,7 @@ ssh azureuser@<public-ip>
 
 ---
 
-## ✅ Clean up resources (optional)
+## Clean up resources (optional)
 
 ```bash
 az group delete --name bicep-rg --yes --no-wait
